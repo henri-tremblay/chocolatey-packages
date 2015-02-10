@@ -20,7 +20,7 @@ $m2_home = Join-Path $binRoot $name
 $m2_bin = Join-Path $m2_home 'bin'
 $m2_repo = Join-Path $env:USERPROFILE '.m2'
 
-$url = "ftp://apache.mirrors.pair.com/maven/maven-3/$version/binaries/$name-bin.zip"
+$url = "http://apache.mirrors.pair.com/maven/maven-3/$version/binaries/$name-bin.zip"
 
 
 [Environment]::SetEnvironmentVariable('M2_HOME', $m2_home, "User")
