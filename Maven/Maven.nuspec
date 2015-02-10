@@ -8,7 +8,8 @@
     <owners>Elliando Dias</owners>
     <summary>Apache Maven is a software project management and comprehension tool. Based on the concept of a project object 
 	model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information</summary>
-    <description>Apache Maven is a software project management and comprehension tool</description>
+    <description>Apache Maven is a software project management and comprehension tool. Based on the concept of a project object 
+	model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information</description>
     <projectUrl>http://maven.apache.org/</projectUrl>
     <tags>maven java development</tags>
     <copyright>© 2002-2013 The Apache Software Foundation</copyright>
