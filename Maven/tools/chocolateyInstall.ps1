@@ -9,7 +9,7 @@ $binRoot = Get-BinRoot
 
 CreateFolder($binRoot)
 
-$version = '3.3.1'
+$version = '3.3.3'
 $name = "apache-maven-$version"
 $m2_home = Join-Path $binRoot $name
 $m2_bin = Join-Path $m2_home 'bin'
