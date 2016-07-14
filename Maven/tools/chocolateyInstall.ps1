@@ -9,13 +9,13 @@ $binRoot = Get-BinRoot
 
 CreateFolder($binRoot)
 
-$version = '3.3.3'
+$version = '3.3.9'
 $name = "apache-maven-$version"
 $m2_home = Join-Path $binRoot $name
 $m2_bin = Join-Path $m2_home 'bin'
 $m2_repo = Join-Path $env:USERPROFILE '.m2'
 
-$url = "http://apache.mirrors.pair.com/maven/maven-3/$version/binaries/$name-bin.zip"
+$url = "http://archive.apache.org/dist/maven/maven-3/$version/binaries/$name-bin.zip"
 
 
 [Environment]::SetEnvironmentVariable('M2_HOME', $m2_home, "User")
