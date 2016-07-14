@@ -1,6 +1,6 @@
 $binRoot = Get-BinRoot
 
-$version = '3.3.3'
+$version = '3.3.9'
 $name = "apache-maven-$version"
 $m2_home = Join-Path $binRoot $name
 $m2_bin = Join-Path $m2_home 'bin'
