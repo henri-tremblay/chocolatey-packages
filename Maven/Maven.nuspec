@@ -12,8 +12,8 @@
 	model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information</description>
     <projectUrl>http://maven.apache.org/</projectUrl>
     <tags>maven java development</tags>
-    <copyright>2002-2015 The Apache Software Foundation</copyright>
-    <licenseUrl>http://maven.apache.org/license.html</licenseUrl>
+    <copyright>2002-2016 The Apache Software Foundation</copyright>
+    <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>http://upload.wikimedia.org/wikipedia/commons/f/f5/Maven_logo.gif</iconUrl>
     <dependencies></dependencies>
