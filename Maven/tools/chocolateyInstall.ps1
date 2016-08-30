@@ -23,7 +23,12 @@ $url = "http://archive.apache.org/dist/maven/maven-3/$version/binaries/$name-bin
 [Environment]::SetEnvironmentVariable('M2', $m2_bin, "User")
 [Environment]::SetEnvironmentVariable('M2_REPO', $m2_repo, "User")
 
-Install-ChocolateyZipPackage 'Maven' $url $binRoot #download the maven .zip and unzip in $binRoot folder
+Install-ChocolateyZipPackage `
+    -PackageName 'Maven' `
+    -Url $url `
+    -Checksum 'e7ebd0b8d6811b42a5dad91fb27fe9b4' `
+    -ChecksumType 'md5' `
+    -UnzipLocation $binRoot
 
 CreateFolder($m2_repo)
 
