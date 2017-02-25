@@ -5,17 +5,16 @@ function CreateFolder ([string]$Path) {
   New-Item -Path $Path -type directory -Force
 }
 
-$binRoot = Get-BinRoot
-
-CreateFolder($binRoot)
-
 $version = '3.3.9'
 $name = "apache-maven-$version"
-$m2_home = Join-Path $binRoot $name
+$tools = Split-Path $MyInvocation.MyCommand.Definition
+$package = Split-Path $tools
+$m2_home = Join-Path $package $name
 $m2_bin = Join-Path $m2_home 'bin'
+$mvn_cmd = Join-Path $m2_home 'bin/mvn.cmd'
 $m2_repo = Join-Path $env:USERPROFILE '.m2'
 
-$url = "http://archive.apache.org/dist/maven/maven-3/$version/binaries/$name-bin.zip"
+$url = "https://archive.apache.org/dist/maven/maven-3/$version/binaries/$name-bin.zip"
 
 
 [Environment]::SetEnvironmentVariable('M2_HOME', $m2_home, "User")
@@ -28,9 +27,8 @@ Install-ChocolateyZipPackage `
     -Url $url `
     -Checksum 'e7ebd0b8d6811b42a5dad91fb27fe9b4' `
     -ChecksumType 'md5' `
-    -UnzipLocation $binRoot
+    -UnzipLocation $package
 
 CreateFolder($m2_repo)
 
-Install-ChocolateyPath $m2_bin 'User' #add to path
-
+Install-BinFile -Name 'mvn' -Path $mvn_cmd

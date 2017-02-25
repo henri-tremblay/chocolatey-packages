@@ -1,9 +1,10 @@
-$binRoot = Get-BinRoot
-
 $version = '3.3.9'
 $name = "apache-maven-$version"
-$m2_home = Join-Path $binRoot $name
+$tools = Split-Path $MyInvocation.MyCommand.Definition
+$package = Split-Path $tools
+$m2_home = Join-Path $package $name
 $m2_bin = Join-Path $m2_home 'bin'
+$mvn_cmd = Join-Path $m2_home 'bin/mvn.cmd'
 $m2_repo = Join-Path $env:USERPROFILE '.m2'
 
 [Environment]::SetEnvironmentVariable('M2_HOME', $null, "User")
@@ -11,13 +12,4 @@ $m2_repo = Join-Path $env:USERPROFILE '.m2'
 [Environment]::SetEnvironmentVariable('M2', $null, "User")
 [Environment]::SetEnvironmentVariable('M2_REPO', $null, "User")
 
-"Please manually remove Maven ($m2_home) from the PATH environment variable."
-# Remove Maven from the path environment variable
-#if ($null -ne $env:path)
-#{
-#   $p = $env:path.Split(";") |? {$_.toLower() -ne $m2_bin}
-#    $newPath = [String]::Join(";")
-#    [Environment]::SetEnvironmentVariable('PATH', $newPath, "User")
-#}
-
-Remove-Item $m2_home -Recurse -Force
+Uninstall-BinFile -Name 'mvn' -Path $mvn_cmd
