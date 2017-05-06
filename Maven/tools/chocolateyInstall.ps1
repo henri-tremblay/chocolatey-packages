@@ -5,7 +5,7 @@ function CreateFolder ([string]$Path) {
   New-Item -Path $Path -type directory -Force
 }
 
-$version = '3.3.9'
+$version = '3.5.0'
 $name = "apache-maven-$version"
 $tools = Split-Path $MyInvocation.MyCommand.Definition
 $package = Split-Path $tools
@@ -25,7 +25,7 @@ $url = "https://archive.apache.org/dist/maven/maven-3/$version/binaries/$name-bi
 Install-ChocolateyZipPackage `
     -PackageName 'Maven' `
     -Url $url `
-    -Checksum 'e7ebd0b8d6811b42a5dad91fb27fe9b4' `
+    -Checksum 'c062cb57ca81615cc16500af332b93bd' `
     -ChecksumType 'md5' `
     -UnzipLocation $package
 
