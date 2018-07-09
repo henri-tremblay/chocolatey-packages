@@ -3,7 +3,7 @@
   <metadata>
     <id>maven</id>
     <title>Maven</title>
-    <version>3.5.3</version>
+    <version>3.5.4</version>
     <authors>The Apache Maven team</authors>
     <owners>Michael Pereira, Jean-Pierre Matsumoto</owners>
     <summary>Apache Maven is a software project management and comprehension tool. Based on the concept of a project object 
@@ -12,11 +12,11 @@
 	model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information</description>
     <projectUrl>http://maven.apache.org/</projectUrl>
     <tags>apache maven build script xml java development</tags>
-    <copyright>2002-2017 The Apache Software Foundation</copyright>
+    <copyright>2002-2018 The Apache Software Foundation</copyright>
     <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://upload.wikimedia.org/wikipedia/commons/0/0b/Maven_logo.svg</iconUrl>
-    <releaseNotes>https://maven.apache.org/docs/3.5.3/release-notes.html</releaseNotes>
+    <releaseNotes>https://maven.apache.org/docs/3.5.4/release-notes.html</releaseNotes>
     <docsUrl>https://maven.apache.org/guides/index.html</docsUrl>
     <bugTrackerUrl>https://maven.apache.org/issue-tracking.html</bugTrackerUrl>
     <mailingListUrl>https://maven.apache.org/mail-lists.html</mailingListUrl>
