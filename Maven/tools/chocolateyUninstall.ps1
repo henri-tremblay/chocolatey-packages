@@ -1,4 +1,4 @@
-$version = '3.5.4'
+$version = '3.6.0'
 $name = "apache-maven-$version"
 $tools = Split-Path $MyInvocation.MyCommand.Definition
 $package = Split-Path $tools
