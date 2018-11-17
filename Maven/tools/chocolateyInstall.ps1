@@ -5,13 +5,13 @@ function CreateFolder ([string]$Path) {
   New-Item -Path $Path -type directory -Force
 }
 
-$version = '3.6.0'
+$version = '3.0.5'
 $name = "apache-maven-$version"
 $tools = Split-Path $MyInvocation.MyCommand.Definition
 $package = Split-Path $tools
 $m2_home = Join-Path $package $name
-$mvn_cmd = Join-Path $m2_home 'bin/mvn.cmd'
-$mvn_debug_cmd = Join-Path $m2_home 'bin/mvnDebug.cmd'
+$mvn_cmd = Join-Path $m2_home 'bin/mvn.bat'
+$mvn_debug_cmd = Join-Path $m2_home 'bin/mvnDebug.bat'
 $m2_repo = Join-Path $env:USERPROFILE '.m2'
 
 $url = "https://archive.apache.org/dist/maven/maven-3/$version/binaries/$name-bin.zip"
@@ -22,7 +22,7 @@ $url = "https://archive.apache.org/dist/maven/maven-3/$version/binaries/$name-bi
 Install-ChocolateyZipPackage `
     -PackageName 'Maven' `
     -Url $url `
-    -Checksum '7d14ab2b713880538974aa361b987231473fbbed20e83586d542c691ace1139026f232bd46fdcce5e8887f528ab1c3fbfc1b2adec90518b6941235952d3868e9' `
+    -Checksum '49a0854318678ec52641babca57bbf57ce8d67825dc9b0565df77b8fc6bc90a2b02a3ace7dce737de49de2eb7d1f2885ca901350e8826a63c4dd5381f03fcaa6' `
     -ChecksumType 'sha512' `
     -UnzipLocation $package
 
