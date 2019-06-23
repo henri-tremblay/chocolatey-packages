@@ -22,8 +22,5 @@
     <mailingListUrl>https://maven.apache.org/mail-lists.html</mailingListUrl>
     <packageSourceUrl>https://github.com/MichaelPereira/chocolatey-packages</packageSourceUrl>
     <projectSourceUrl>https://maven.apache.org/source-repository.html</projectSourceUrl>
-    <dependencies>
-      <dependency id="jdk8"/>
-    </dependencies>
   </metadata>
 </package>
