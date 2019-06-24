@@ -17,7 +17,7 @@ $m2_repo = Join-Path $env:USERPROFILE '.m2'
 $url = "https://archive.apache.org/dist/maven/maven-3/$version/binaries/$name-bin.zip"
 
 
-[Environment]::SetEnvironmentVariable('M2_HOME', $m2_home, "User")
+[Environment]::SetEnvironmentVariable('M2_HOME', $m2_home, "Machine")
 
 Install-ChocolateyZipPackage `
     -PackageName 'Maven' `
@@ -28,5 +28,9 @@ Install-ChocolateyZipPackage `
 
 CreateFolder($m2_repo)
 
-Install-BinFile -Name 'mvn' -Path $mvn_cmd
-Install-BinFile -Name 'mvnDebug' -Path $mvn_debug_cmd
+Install-ChocolateyPath -PathToInstall "%M2_HOME%\bin" -PathType 'Machine'
+
+# TODO: Remove from next release
+Uninstall-BinFile -Name 'mvn' -Path $mvn_cmd
+Uninstall-BinFile -Name 'mvnDebug' -Path $mvn_debug_cmd
+[Environment]::SetEnvironmentVariable('M2_HOME', $null, "User")
