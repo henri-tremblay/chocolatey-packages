@@ -1,9 +1,3 @@
-$version = '3.6.1'
-$name = "apache-maven-$version"
-$tools = Split-Path $MyInvocation.MyCommand.Definition
-$package = Split-Path $tools
-$m2_home = Join-Path $package $name
-
 [Environment]::SetEnvironmentVariable('M2_HOME', $null, "Machine")
 
 #Using registry method prevents expansion (and loss) of environment variables (whether the target of the removal or not)
