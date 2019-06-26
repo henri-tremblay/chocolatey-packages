@@ -30,9 +30,10 @@ Install-ChocolateyZipPackage `
 
 CreateFolder($m2_repo)
 
+[Environment]::SetEnvironmentVariable('M2_HOME', $m2_home, 'Machine')
 Install-ChocolateyPath -PathToInstall $pathToAdd -PathType 'Machine'
 
 # TODO: Clean-up code for versions <= 3.6.1. Remove from next release
 Uninstall-BinFile -Name 'mvn' -Path $mvn_cmd
 Uninstall-BinFile -Name 'mvnDebug' -Path $mvn_debug_cmd
-[Environment]::SetEnvironmentVariable('M2_HOME', $null, "User")
+[Environment]::SetEnvironmentVariable('M2_HOME', $null, 'User')
