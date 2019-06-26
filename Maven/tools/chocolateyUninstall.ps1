@@ -7,7 +7,7 @@ $pathToRemove = '%M2_HOME%\bin'
 $unexpandedPath = (Get-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" ).GetValue('Path', '', 'DoNotExpandEnvironmentNames') 
 
 foreach ($path in "$unexpandedPath".split(';')) {
-    if ($path -ine "$pathToRemove" -and $path -ine "$pathToRemove\") {
+    if ($pathToRemove -ine $path -and "$pathToRemove\" -ine $path) {
         [string[]]$newpath += "$path"
     }
 }
